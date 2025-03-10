@@ -95,43 +95,48 @@ onMounted(fetchContributions);
 </script>
 
 <template>
-  <div class="github-graph mt-10 p-4 rounded-lg bg-zinc-900">
-    <!-- Header -->
-    <h2 class="text-2xl font-semibold text-zinc-100 mb-1">
-      GitHub Contributions
-    </h2>
-    <p class="text-sm text-zinc-400 mb-4">
-      Total Contributions: {{ totalContributions }}
-    </p>
+  <div class="relative px-4 sm:px-8 lg:px-12 mt-16">
+    <div class="max-w-2xl mx-auto lg:max-w-5xl">
+      <div class="github-graph ">
+      <!-- Header -->
+        <h2 class="text-2xl font-semibold text-zinc-100 mb-1">
+          GitHub Contributions
+        </h2>
+        <p class="text-sm text-zinc-400 mb-4">
+          Total Contributions: {{ totalContributions }}
+        </p>
 
-    <!-- Contribution Graph -->
-    <div class="grid grid-cols-53 gap-1 overflow-auto">
-      <div
-        v-for="(week, weekIndex) in contributions"
-        :key="weekIndex"
-        class="flex flex-col gap-1"
-      >
-        <div
-          v-for="(day, dayIndex) in week.contributionDays"
-          :key="dayIndex"
-          :class="[getContributionLevel(day.contributionCount), 'w-3 h-3 rounded-sm transition-all duration-200 hover:scale-125 hover:shadow-lg cursor-pointer']"
-          :title="`📅 ${day.date}\n🟢 ${day.contributionCount} contributions`"
-          @click="openGitHubDay(day.date)"
-        />
+        <!-- Contribution Graph -->
+        <div class="grid grid-cols-53 gap-1 overflow-auto">
+          <div
+            v-for="(week, weekIndex) in contributions"
+            :key="weekIndex"
+            class="flex flex-col gap-1"
+          >
+            <div
+              v-for="(day, dayIndex) in week.contributionDays"
+              :key="dayIndex"
+              :class="[getContributionLevel(day.contributionCount), 'w-3 h-3 rounded-sm transition-all duration-200 hover:scale-125 hover:shadow-lg cursor-pointer']"
+              :title="`📅 ${day.date}\n🟢 ${day.contributionCount} contributions`"
+              @click="openGitHubDay(day.date)"
+            />
+          </div>
+        </div>
+
+        <!-- Heatmap Legend -->
+        <div class="mt-4 flex items-center gap-2 text-xs text-zinc-400">
+          <span>Less</span>
+          <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
+          <div class="w-3 h-3 bg-green-200 rounded-sm"></div>
+          <div class="w-3 h-3 bg-green-400 rounded-sm"></div>
+          <div class="w-3 h-3 bg-green-600 rounded-sm"></div>
+          <div class="w-3 h-3 bg-green-800 rounded-sm"></div>
+          <span>More</span>
+        </div>
       </div>
     </div>
-
-    <!-- Heatmap Legend -->
-    <div class="mt-4 flex items-center gap-2 text-xs text-zinc-400">
-      <span>Less</span>
-      <div class="w-3 h-3 bg-gray-800 rounded-sm"></div>
-      <div class="w-3 h-3 bg-green-200 rounded-sm"></div>
-      <div class="w-3 h-3 bg-green-400 rounded-sm"></div>
-      <div class="w-3 h-3 bg-green-600 rounded-sm"></div>
-      <div class="w-3 h-3 bg-green-800 rounded-sm"></div>
-      <span>More</span>
-    </div>
   </div>
+
 </template>
 
 <style scoped>
