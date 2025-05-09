@@ -18,7 +18,7 @@ import { experiences } from '~/config'
         <!-- ✅ Download Resume Button -->
         <div class="mt-6">
           <a 
-            href="https://drive.google.com/file/d/19O0TBvBKxkS9rmx-EpwiuBK07T25kEgE/view?usp=drive_link" 
+            href="https://drive.google.com/file/d/12rEGSml4Ci4HWpFgE3CLhsduwraxblpd/view?usp=sharing" 
             target="_blank"
             class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
           >

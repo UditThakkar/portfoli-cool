@@ -9,10 +9,10 @@
         </div>
 
         <h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-          I'm Udit, Backend Developer
+          I'm Udit, Full-Stack Developer (Backend-Heavy)
         </h1>
         <p class="mt-6 text-base text-zinc-400">
-          My name is Udit, and I'm a Backend Developer from India.
+          My name is Udit, and I'm a Full-Stack Developer (Backend-Heavy) from India.
           I make jokes when I’m uncomfortable.
           <br>
           I like playing competitive games.
