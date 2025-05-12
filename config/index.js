@@ -6,6 +6,12 @@ export const menu = [
 ]
 
 export const projects = [
+  {
+    name: 'Jeera: A project management tool',
+    description: 'A basic project management tool that allows users to create and manage projects, tasks, and team members. Built with Java, Spring Boot, and Vue.js.',
+    img: '',
+    url: 'https://github.com/UditThakkar/jeera'
+  }
 ]
 
 export const experiences = [
