@@ -9,7 +9,7 @@ export const projects = [
   {
     name: 'Jeera: A project management tool',
     description: 'A basic project management tool that allows users to create and manage projects, tasks, and team members. Built with Java, Spring Boot, and Vue.js. This is work in progress',
-    img: 'https://drive.google.com/file/d/1s1g9wklXZDvUptwY0_ndbs5um-rGhH_j/view?usp=sharing',
+    img: '/jeera.png',
     url: 'https://github.com/UditThakkar/jeera'
   }
 ]
