@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-
-
 export const getContributionGraph = async (username) => {
   const config = useRuntimeConfig()
   const query = `
