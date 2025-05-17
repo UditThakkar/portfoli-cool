@@ -11,6 +11,12 @@ export const projects = [
     description: 'A basic project management tool that allows users to create and manage projects, tasks, and team members. Built with Java, Spring Boot, and Vue.js. This is work in progress',
     img: '/jeera.png',
     url: 'https://github.com/UditThakkar/jeera'
+  },
+  {
+    name: 'Sincify',
+    description: 'Transfer your music from spotify to youtube. Easy and somewhat fast hehe.',
+    img: '',
+    url: ''
   }
 ]
 
