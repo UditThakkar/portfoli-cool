@@ -46,11 +46,12 @@ useSeoMeta({
                   <div
                     class="absolute z-0 transition scale-95 opacity-0 -inset-y-6 -inset-x-4 group-hover:scale-100 group-hover:opacity-100 bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl">
                   </div>
-                  <a :href="experience.url">
+                  <a v-if="experience.url" :href="experience.url" target="_blank">
                     <span class="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl">
                     </span>
                     <span class="relative z-10">{{ `${experience.position} at ${experience.company}` }}</span>
                   </a>
+                  <span v-else class="relative z-10">{{ `${experience.position} at ${experience.company}` }}</span>
                 </h2>
                 <time class="md:hidden relative z-10 order-first mb-3 flex items-center text-sm text-zinc-500 pl-3.5"
                   datetime="2022-09-05">
@@ -62,7 +63,7 @@ useSeoMeta({
                   {{ experience.description }}
                 </p>
               </div>
-              <time class="relative z-10 flex items-center order-first mt-1 mb-3 text-sm md:block text-zinc-500"
+              <time class="hidden md:block relative z-10 items-center order-first mt-1 mb-3 text-sm text-zinc-500"
                 datetime="2022-09-05">{{ experience.date }}</time>
             </article>
           </div>

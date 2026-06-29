@@ -15,7 +15,6 @@ useSeoMeta({
   <div>
     <HomeHero />
     <!-- <HomeImages /> -->
-     <!-- <HomeSpotify /> -->
-      <GithubGraph />
+    <GithubGraph />
   </div>
 </template>

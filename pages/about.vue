@@ -39,10 +39,6 @@ useSeoMeta({
             <p>
               So, whether you want to build an awesome project, play a game of Valorant, or just chat about cool tech stuff — hit me up! 🚀
             </p>
-
-            <p>
-              Boi Boi
-            </p>
           </div>
         </div>
         <div class="lg:pl-20">
@@ -88,7 +84,7 @@ useSeoMeta({
             </li>
             <li class="flex pt-8 mt-8 border-t border-zinc-100 dark:border-zinc-700/40">
               <a class="flex text-sm font-medium transition group text-zinc-800 hover:text-primary-500 dark:text-zinc-200 dark:hover:text-primary-500"
-                href="uditthacker29@gmail.com">
+                href="mailto:uditthacker29@gmail.com">
                 <svg viewBox="0 0 24 24" aria-hidden="true"
                   class="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-primary-500">
                   <path fill-rule="evenodd"
