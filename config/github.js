@@ -1,34 +1,9 @@
 import axios from 'axios';
 
 export const getContributionGraph = async (username) => {
-  const config = useRuntimeConfig()
-  const query = `
-    {
-      user(login: "${username}") {
-        contributionsCollection {
-          contributionCalendar {
-            totalContributions
-            weeks {
-              contributionDays {
-                color
-                contributionCount
-                date
-              }
-            }
-          }
-        }
-      }
-    }
-  `;
-  const response = await axios.post(
-    'https://api.github.com/graphql',
-    { query },
-    {
-      headers: {
-        Authorization: `Bearer ${config.public.githubToken}`
-      }
-    }
-  );
+  const response = await axios.get('/api/github', {
+    params: { username }
+  });
 
-  return response.data.data.user.contributionsCollection.contributionCalendar;
+  return response.data;
 };

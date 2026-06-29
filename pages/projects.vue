@@ -1,5 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { projects } from '~/config'
+
+useSeoMeta({
+  title: 'Projects by Udit Thakkar - Full-Stack & Backend Showcase',
+  ogTitle: 'Projects by Udit Thakkar - Full-Stack & Backend Showcase',
+  description: 'Explore the portfolio of software projects designed and developed by Udit Thakkar, featuring backend tools, open-source work, and system integration.',
+  ogDescription: 'A showcase of backend and full-stack software applications built by Udit Thakkar.',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>

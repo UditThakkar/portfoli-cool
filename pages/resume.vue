@@ -1,5 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { experiences } from '~/config'
+
+useSeoMeta({
+  title: 'Resume & Experience - Udit Thakkar',
+  ogTitle: 'Resume & Experience - Udit Thakkar',
+  description: 'Professional experience and resume of Udit Thakkar. 3.6 years of experience building scalable backend architectures, APIs, and real-time messaging systems.',
+  ogDescription: 'Professional experience and resume of Udit Thakkar. 3.6 years of experience in backend development.',
+  ogType: 'profile',
+  twitterCard: 'summary_large_image',
+})
 </script>
 
 <template>
@@ -7,7 +16,7 @@ import { experiences } from '~/config'
     <div class="max-w-2xl mx-auto lg:max-w-5xl">
       <header class="max-w-2xl">
         <h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-          I have 2 years of experience.
+          I have 3.6 years of experience.
           <br>
           I am looking for new opportunities 
         </h1>
