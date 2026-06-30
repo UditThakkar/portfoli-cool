@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { experiences } from '~/config'
+import { experiences, calculateExperience } from '~/config'
 
 useSeoMeta({
   title: 'Resume & Experience - Udit Thakkar',
   ogTitle: 'Resume & Experience - Udit Thakkar',
-  description: 'Professional experience and resume of Udit Thakkar. 3.6 years of experience building scalable backend architectures, APIs, and real-time messaging systems.',
-  ogDescription: 'Professional experience and resume of Udit Thakkar. 3.6 years of experience in backend development.',
+  description: `Professional experience and resume of Udit Thakkar. ${calculateExperience()} years of experience building scalable backend architectures, APIs, and real-time messaging systems.`,
+  ogDescription: `Professional experience and resume of Udit Thakkar. ${calculateExperience()} years of experience in backend development.`,
   ogType: 'profile',
   twitterCard: 'summary_large_image',
 })
@@ -16,7 +16,7 @@ useSeoMeta({
     <div class="max-w-2xl mx-auto lg:max-w-5xl">
       <header class="max-w-2xl">
         <h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
-          I have 3.6 years of experience.
+          I have {{ calculateExperience() }} years of experience.
           <br>
           I am looking for new opportunities 
         </h1>
@@ -36,9 +36,9 @@ useSeoMeta({
         </div>
       </header>
 
-      <div class="mt-16 sm:mt-20">
+      <div class="mt-8 sm:mt-10">
         <div class="md:border-l md:pl-6 md:border-zinc-700/40">
-          <div class="flex flex-col max-w-3xl space-y-16">
+          <div class="flex flex-col max-w-3xl space-y-10">
             <article v-for="experience in experiences" :key="experience.date"
               class="md:grid md:grid-cols-4 md:items-baseline">
               <div class="relative flex flex-col items-start md:col-span-3 group">

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     spotifyClientId: process.env.SPOTIFY_CLIENT_ID,
     spotifyClientSecret: process.env.SPOTIFY_CLIENT_SECRET,
     spotifyRefreshToken: process.env.SPOTIFY_REFRESH_TOKEN,
+    geminiApiKey: process.env.GEMINI_API_KEY,
     public: {}
   }
 })

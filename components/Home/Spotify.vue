@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+
 // Define the shape of our Spotify API response
 interface SpotifyTrack {
   isPlaying: boolean
@@ -9,8 +11,24 @@ interface SpotifyTrack {
   songUrl?: string
   error?: string
 }
+
 // Type-cast the useFetch hook
-const { data: track } = useFetch<SpotifyTrack>('/api/spotify')
+const { data: track, refresh } = useFetch<SpotifyTrack>('/api/spotify')
+
+let pollInterval: any = null
+
+onMounted(() => {
+  // Poll the proxy endpoint every 10 seconds to update live playback state
+  pollInterval = setInterval(() => {
+    refresh()
+  }, 10000)
+})
+
+onUnmounted(() => {
+  if (pollInterval) {
+    clearInterval(pollInterval)
+  }
+})
 </script>
 
 <template>

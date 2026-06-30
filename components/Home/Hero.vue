@@ -54,7 +54,7 @@
         </div>
 
         <!-- Spotify Widget (Right Column) -->
-        <div class="lg:col-span-1 w-full lg:pt-24 flex justify-center lg:justify-end">
+        <div class="lg:col-span-1 w-full lg:pt-12 flex justify-center lg:justify-end">
           <HomeSpotify />
         </div>
         

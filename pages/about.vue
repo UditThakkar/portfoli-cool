@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { calculateExperience } from '~/config'
+
 useSeoMeta({
   title: 'About Udit Thakkar - Backend Developer Profile',
   ogTitle: 'About Udit Thakkar - Backend Developer Profile',
-  description: 'Learn more about Udit Thakkar, a backend wizard with 3.6 years of experience specializing in Java Spring Boot, REST APIs, microservices, and database tuning.',
+  description: `Learn more about Udit Thakkar, a backend wizard with ${calculateExperience()} years of experience specializing in Java Spring Boot, REST APIs, microservices, and database tuning.`,
   ogDescription: 'Learn more about Udit Thakkar, a backend wizard specializing in Java Spring Boot, APIs, and scalable backend services.',
   ogType: 'profile',
   twitterCard: 'summary_large_image',
@@ -28,7 +30,7 @@ useSeoMeta({
               Hey there! I'm Udit Thakkar — a backend developer who loves building powerful and scalable web applications. I turn caffeine into clean code and make sure everything runs smoothly behind the scenes. ☕💻
             </p>
             <p>
-              I’ve got 3.6 years of experience working with Java Spring Boot, creating robust APIs, optimizing databases, and making the web a better place (at least the backend part of it 😉).
+              I’ve got {{ calculateExperience() }} years of experience working with Java Spring Boot, creating robust APIs, optimizing databases, and making the web a better place (at least the backend part of it 😉).
             </p>
             <p>
               When I'm not busy fixing bugs or deploying new features, you’ll probably find me gaming (Valorant or CS2), binge-watching anime, or experimenting with some new tech stack. 🎮📺🔧

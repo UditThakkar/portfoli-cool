@@ -25,7 +25,7 @@ useSeoMeta({
             Feel free to check them out and see what I've been up to! 🚀💻
           </p>
         </header>
-        <div class="mt-16 sm:mt-20">
+        <div class="mt-8 sm:mt-10">
 
           <div v-if="projects.length === 0" class="text-center py-10">
             <p class="text-xl text-zinc-400 animate-pulse">
@@ -37,7 +37,10 @@ useSeoMeta({
             <li v-for="project in projects" :key="project.name" class="relative flex flex-col items-start group">
               <div
                 class="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <img alt="" :src="project.img" class="w-8 h-8 rounded-full">
+                <img v-if="project.img" alt="" :src="project.img" class="w-8 h-8 rounded-full">
+                <svg v-else class="w-6 h-6 text-zinc-500 dark:text-zinc-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
               </div>
               <h2 class="mt-6 text-base font-semibold text-zinc-100">
                 <div

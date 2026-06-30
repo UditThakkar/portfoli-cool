@@ -3,7 +3,7 @@ import { menu } from '~/config'
 </script>
 
 <template>
-  <div class="py-16 mt-32 border-t border-zinc-700/40">
+  <div class="py-4 mt-8 border-t border-zinc-700/40">
     <div class="relative px-4 sm:px-8 lg:px-12">
       <div class="max-w-2xl mx-auto lg:max-w-5xl">
         <div class="flex flex-col items-center justify-between gap-6 sm:flex-row">

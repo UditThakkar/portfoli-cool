@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from 'vue'
-import { projects } from '~/config'
+import { projects, experiences, calculateExperience } from '~/config'
 
 // Define history line structure
 interface HistoryItem {
@@ -47,6 +47,7 @@ const executeCommand = () => {
           <div><span class="text-green-400">help</span> - Show this help menu</div>
           <div><span class="text-green-400">about</span> - Read Udit's bio</div>
           <div><span class="text-green-400">skills</span> - List tech stack & wizard levels</div>
+          <div><span class="text-green-400">experience</span> - View professional experience</div>
           <div><span class="text-green-400">projects</span> - View featured projects</div>
           <div><span class="text-green-400">contact</span> - Get social & email links</div>
           <div><span class="text-green-400">neofetch</span> - System specs & avatar</div>
@@ -60,7 +61,7 @@ const executeCommand = () => {
       output = `
         Udit Thakkar — Backend Wizard (Full-Stack Developer) based in India.
         Specializes in building robust, high-performance APIs and microservices.
-        He has 3.6 years of experience, plays competitive Valorant/CS2, and runs on caffeine.
+        He has ${calculateExperience()} years of experience, plays competitive Valorant/CS2, and runs on caffeine.
       `
       break
 
@@ -71,6 +72,22 @@ const executeCommand = () => {
           <p><span class="text-cyan-400 font-bold">[Sorcerer]</span> SQL, PostgreSQL, Redis, RabbitMQ, Git</p>
           <p><span class="text-indigo-400 font-bold">[Alchemist]</span> Vue.js, Nuxt 3, JavaScript, TypeScript, Next.js</p>
           <p><span class="text-zinc-500 font-bold">[Novice]</span> CSS, Docker, Microservices Architecture</p>
+        </div>
+      `
+      isRawHtml = true
+      break
+
+    case 'experience':
+    case 'resume':
+      output = `
+        <div class="space-y-3 font-mono text-zinc-300 mt-1">
+          ${experiences.map(exp => `
+            <div>
+              <p class="text-yellow-400 font-bold">${exp.position} at ${exp.company}</p>
+              <p class="text-zinc-500 text-xs">${exp.date}</p>
+              <p class="text-zinc-400 text-sm mt-0.5">${exp.description}</p>
+            </div>
+          `).join('')}
         </div>
       `
       isRawHtml = true
@@ -111,7 +128,7 @@ const executeCommand = () => {
             <p class="text-green-400 font-bold">udit@backend-wizard</p>
             <p>------------------</p>
             <p><span class="text-yellow-400">OS</span>: Windows Server / Nuxt 3 Engine</p>
-            <p><span class="text-yellow-400">Exp</span>: 3.6 Years (Backend-Heavy)</p>
+            <p><span class="text-yellow-400">Exp</span>: ${calculateExperience()} Years (Backend-Heavy)</p>
             <p><span class="text-yellow-400">Focus</span>: APIs, DB Optimization, Event Driven Systems</p>
             <p><span class="text-yellow-400">Caffeine</span>: Active (Spring Boot Powered)</p>
           </div>
